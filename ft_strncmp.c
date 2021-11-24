@@ -6,10 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:09:46 by yolee             #+#    #+#             */
-/*   Updated: 2021/09/21 12:24:15 by yolee            ###   ########.fr       */
+/*   Updated: 2021/11/24 17:40:29 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	loop;

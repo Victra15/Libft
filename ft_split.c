@@ -6,10 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 01:50:55 by yolee             #+#    #+#             */
-/*   Updated: 2021/09/28 01:46:24 by yolee            ###   ########.fr       */
+/*   Updated: 2021/11/24 17:40:29 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include	<stdlib.h>
 
 int	is_sep(char chr, char *charset)

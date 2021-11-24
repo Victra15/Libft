@@ -6,11 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:43:27 by yolee             #+#    #+#             */
-/*   Updated: 2021/09/14 20:00:46 by yolee            ###   ########.fr       */
+/*   Updated: 2021/11/24 18:02:18 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    <unistd.h>
+#include	"libft.h"
 
 int	ft_strlen(char *str)
 {
