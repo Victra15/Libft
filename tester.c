@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/11/26 17:21:58 by yolee            ###   ########.fr       */
+/*   Updated: 2021/11/26 19:51:34 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,17 @@ int	main(void)
 	}
 	else if (selector == 6)
 	{	
+		void *b;
+		int c;
+		size_t len;
+
+		c = 'a';
+		len = 10;
+
+		ft_memset(b, c, len);
+		write(1, b, len);
+		memset(b, c, len);
+		write(1, b, len);
 	}
 	else if (selector == 7)
 	{	
