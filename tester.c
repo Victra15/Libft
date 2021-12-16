@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/11/26 19:51:34 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/16 17:02:26 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,25 +59,28 @@ int	main(void)
 	}
 	else if (selector == 5)
 	{
-		ft_isalpha('0');
-		isalpha('0');
+		printf("%lu\n", strlen("123456789"));
+		printf("%lu\n", ft_strlen("123456789"));
 	}
 	else if (selector == 6)
 	{	
-		void *b;
-		int c;
-		size_t len;
+		char	str1[10] = "123456789";
+		char	str2[10] = "123456789";
 
-		c = 'a';
-		len = 10;
-
-		ft_memset(b, c, len);
-		write(1, b, len);
-		memset(b, c, len);
-		write(1, b, len);
+		memset(str1 + 5, 14567, 4);
+		ft_memset(str2 + 5, 14567, 4);
+		printf("%s\n", str1);
+		printf("%s\n", str2);
 	}
 	else if (selector == 7)
 	{	
+		char	str1[10] = "123456789";
+		char	str2[10] = "123456789";
+
+		bzero(str1 + 5, 5);
+		ft_bzero(str2 + 5, 5);
+		printf("%s\n", str1);
+		printf("%s\n", str2);
 	}
 	else if (selector == 8)
 	{	
@@ -117,6 +120,8 @@ int	main(void)
 	}
 	else if (selector == 20)
 	{	
+		printf("%d\n", atoi("00000000000922337203775808000000"));
+		printf("%d", ft_atoi("00000000000922337203775808000000"));
 	}
 	else if (selector == 21)
 	{	
