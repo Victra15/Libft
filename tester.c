@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 17:12:07 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/23 17:35:11 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,23 @@ int	main(void)
 	}
 	else if (selector == 8)
 	{	
+		char	str1[15] = "1234567890";
+		char	str2[15] = "1234567890";
+
+		memcpy(str1 + 2, str1, 10);
+		printf("%s\n", str1);
+		ft_memcpy(str2 + 2, str2, 10);
+		printf("%s\n", str2);
 	}
 	else if (selector == 9)
 	{	
+		char	str1[15] = "1234567890";
+		char	str2[15] = "1234567890";
+
+		memmove(str1 + 2, str1, 10);
+		printf("%s\n", str1);
+		ft_memmove(str2 + 2, str2, 10);
+		printf("%s\n", str2);
 	}
 	else if (selector == 10)
 	{	
