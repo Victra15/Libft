@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:39:18 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 14:52:50 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/23 17:53:34 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	conv_s = s;
 	while (n--)
 	{
-		if (*conv_s++ == conv_c)
+		if (*conv_s == conv_c)
 			return ((void *)(conv_s));
+		conv_s++;
 	}
 	return (0);
 }
