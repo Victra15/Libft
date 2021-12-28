@@ -6,50 +6,50 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:40:16 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/28 13:21:02 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/28 14:57:29 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_skip(const char haystack_chr,
+static void	ft_skip(const char h_chr,
 	 const char *needle,
-	 size_t needle_idx,
-	 size_t *haystack_idx)
+	 size_t n_idx,
+	 size_t *h_idx)
 {
 	size_t	skip;
 
 	skip = 0;
-	while (haystack_chr != needle[needle_idx - skip]
-		&& needle_idx - skip > 0)
+	while (n_idx >= skip
+		&& h_chr != needle[n_idx - skip])
 		skip++;
-	(*haystack_idx) += skip;
+	(*h_idx) += skip;
 }
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	haystack_len;
-	size_t	needle_len;
-	size_t	haystack_idx;
-	size_t	needle_idx;
+	size_t	h_len;
+	size_t	n_len;
+	size_t	h_idx;
+	size_t	n_idx;
 	char	skip_char;
 
-	haystack_len = ft_strlen(haystack);
-	needle_len = ft_strlen(needle);
-	haystack_idx = 0;
-	while ((haystack_idx + needle_len) < len
-		&& (haystack_idx + needle_len) < haystack_len)
+	h_len = ft_strlen(haystack);
+	n_len = ft_strlen(needle);
+	h_idx = 0;
+	while ((h_idx + n_len) < len
+		&& (h_idx + n_len) < h_len)
 	{
-		needle_idx = needle_len;
-		while (needle_idx > 0
-			&& haystack[haystack_idx + needle_idx] == needle[needle_idx])
-			needle_idx--;
-		if (needle_idx == 0)
-			return ((char *)(&haystack[haystack_idx + needle_idx]));
+		n_idx = n_len - 1;
+		while (n_idx > 0
+			&& haystack[h_idx + n_idx] == needle[n_idx])
+			n_idx--;
+		if (n_idx == 0 && haystack[h_idx + n_idx] == needle[n_idx])
+			return ((char *)(&haystack[h_idx + n_idx]));
 		else
 		{
-			skip_char = haystack[haystack_idx + needle_idx];
-			ft_skip(skip_char, needle, needle_idx, &haystack_idx);
+			skip_char = haystack[h_idx + n_idx];
+			ft_skip(skip_char, needle, n_idx, &h_idx);
 		}
 	}
 	return (0);
