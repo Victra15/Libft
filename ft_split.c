@@ -6,14 +6,14 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 01:50:55 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 17:43:09 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/28 03:41:56 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 #include	<stdlib.h>
 
-int	is_sep(char chr, char *charset)
+static int	is_sep(char chr, char *charset)
 {
 	int	charset_loop;
 
@@ -27,7 +27,7 @@ int	is_sep(char chr, char *charset)
 	return (0);
 }
 
-char	*ft_strndup(char *src, int size)
+static char	*ft_strndup(char *src, int size)
 {
 	char	*src_cp;
 	int		idx;
@@ -48,7 +48,7 @@ char	*ft_strndup(char *src, int size)
 	}
 }
 
-void	do_sep(char **splited_strs, char *str, char *charset)
+static void	do_sep(char **splited_strs, char *str, char *charset)
 {
 	int		sep_loop;
 	int		str_loop;
@@ -77,7 +77,7 @@ void	do_sep(char **splited_strs, char *str, char *charset)
 		splited_strs[sep_loop] = ft_strndup(&str[start], size);
 }
 
-char	**sep_str(char *str, char *charset, int sep_cnt)
+static char	**sep_str(char *str, char *charset, int sep_cnt)
 {
 	char	**splited_strs;
 
@@ -87,7 +87,7 @@ char	**sep_str(char *str, char *charset, int sep_cnt)
 	return (splited_strs);
 }
 
-char	**ft_split(char *str, char *charset)
+char	**ft_split(char const *str, char *charset)
 {
 	int		sep_cnt;
 	char	**splited_strs;

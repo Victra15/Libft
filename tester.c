@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 18:24:35 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/28 13:41:22 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,20 @@ int	main(void)
 	}
 	else if (selector == 15)
 	{	
+		char	str1[10] = "123456383";
+		char	chr1 = '1';
+		char	*target1;
+		char	str2[10] = "123456383";
+		char	chr2 = '1';
+		char	*target2;
+	
+		target1 = strrchr(str1, chr1);
+		printf("library\n");
+		printf("%s\n", target1);
+		printf("libft\n");
+		target2 = ft_strrchr(str2, chr2);
+		printf("%s\n", target2);
+		return (0);	
 	}
 	else if (selector == 16)
 	{
@@ -158,6 +172,22 @@ int	main(void)
 	}
 	else if (selector == 19)
 	{	
+		char	str1[10] = "123456789";
+		char	*str2 = "";
+		char	*target1;
+		char	str3[10] = "123456789";
+		char	*str4 = "";
+		char	*target2;
+	
+		target1 = strnstr(str1, str2, 9);
+		printf("library\n");
+		printf("%s\n", target1);
+		printf("%ld\n", strlen(str2));
+		target2 = strnstr(str3, str4, 9);
+		printf("libft\n");
+		printf("%s\n", target2);
+		printf("%ld\n", strlen(str4));
+		return (0);	
 	}
 	else if (selector == 20)
 	{	

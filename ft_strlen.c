@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/14 19:43:27 by yolee             #+#    #+#             */
-/*   Updated: 2021/11/26 15:45:44 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/27 15:13:36 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ size_t	ft_strlen(const char *str)
 
 	idx = 0;
 	while (str[idx] != '\0')
-	{
 		idx++;
-	}
 	return (idx);
 }

@@ -6,35 +6,31 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 19:36:45 by yolee             #+#    #+#             */
-/*   Updated: 2021/11/24 17:40:29 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/27 15:31:27 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	dest_size;
-	unsigned int	src_size;
-	unsigned int	loop;
+	size_t	base_size;
+	size_t	src_size;
+	size_t	loop;
 
-	dest_size = 0;
-	while (dest[dest_size] != '\0')
-		dest_size++;
-	src_size = 0;
-	while (src[src_size] != '\0')
-		src_size++;
+	base_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
 	loop = 0;
-	if (dest_size >= size)
-		return (size + src_size);
-	while (dest_size + loop < size - 1)
+	if (base_size >= dstsize)
+		return (dstsize + src_size);
+	while (base_size + loop < dstsize - 1)
 	{
 		if (loop < src_size)
-			dest[dest_size + loop] = src[loop];
+			dst[base_size + loop] = src[loop];
 		else
 			break ;
 		loop++;
 	}
-	dest[dest_size + loop] = '\0';
-	return (dest_size + src_size);
+	dst[base_size + loop] = '\0';
+	return (base_size + src_size);
 }

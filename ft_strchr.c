@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:39:45 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 18:23:29 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/27 14:46:37 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	conv_c;
-
-	conv_c = (char) c;
 	while (*s != '\0')
 	{
 		if (*s == c)
