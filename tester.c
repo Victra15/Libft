@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/28 14:58:22 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/28 15:08:03 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,41 @@ int	main(void)
 	}
 	else if (selector == 12)
 	{	
+		int		ch1;
+		char	conv_ch1;
+		int		ch2;
+		char	conv_ch2;
+		
+		ch1 = 2135;
+		ch2 = 2135;
+	
+		printf("library\n");
+		conv_ch1 = toupper(ch1);
+		printf("%c\n", conv_ch1);
+		printf("libft\n");
+		conv_ch2 = ft_toupper(ch1);
+		printf("%c\n", conv_ch2);
+	
+		return (0);	
 	}
 	else if (selector == 13)
-	{	
+	{
+		int		ch1;
+		char	conv_ch1;
+		int		ch2;
+		char	conv_ch2;
+		
+		ch1 = 2135;
+		ch2 = 2135;
+	
+		printf("library\n");
+		conv_ch1 = tolower(ch1);
+		printf("%c\n", conv_ch1);
+		printf("libft\n");
+		conv_ch2 = ft_tolower(ch1);
+		printf("%c\n", conv_ch2);
+	
+		return (0);	
 	}
 	else if (selector == 14)
 	{	
