@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/29 20:37:21 by yolee            ###   ########.fr       */
+/*   Updated: 2021/12/29 22:06:16 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -351,6 +351,14 @@ int	main(void)
 	}
 	else if (selector == 27)
 	{	
+		char	*str;
+		int		n;
+	
+		n = -2147483648;
+		printf("libft\n");
+		str = ft_itoa(n);
+		printf("%s\n", str);
+		return (0);
 	}
 	else if (selector == 28)
 	{	
