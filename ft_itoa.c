@@ -6,12 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 20:39:03 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/29 22:06:24 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 00:39:07 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static size_t	ft_intlen(int n)
 {

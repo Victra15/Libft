@@ -6,12 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 23:54:55 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/02 23:56:18 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 00:39:34 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
 void	ft_putstr_fd(char *s, int fd)
 {

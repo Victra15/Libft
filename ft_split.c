@@ -6,12 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 01:50:55 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/29 20:36:46 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 00:39:39 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
-#include	<stdlib.h>
 
 static size_t	ft_split_cnt(char const *s, char c)
 {

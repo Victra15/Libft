@@ -6,12 +6,11 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:21:35 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/29 18:25:36 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 00:40:57 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static char	*ft_strldup(const char *s1, size_t dest_len)
 {
