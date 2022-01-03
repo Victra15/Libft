@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:40:19 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/28 14:57:56 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 11:44:47 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,14 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	idx;
 	size_t	len;
+	char	conv_c;
 
 	len = ft_strlen(s);
 	s += len;
 	idx = 0;
 	while (idx <= len)
 	{
-		if (*s == c)
+		if (*s == conv_c)
 			return ((char *)(s));
 		s--;
 		idx++;
