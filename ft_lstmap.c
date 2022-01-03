@@ -1,22 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/03 00:30:27 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 01:09:49 by yolee            ###   ########.fr       */
+/*   Created: 2022/01/03 01:20:34 by yolee             #+#    #+#             */
+/*   Updated: 2022/01/03 11:23:32 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (lst != NULL)
+	t_list	*temp;
+	t_list	*map_lst;
+
+	map_lst = ft_lstnew(f(lst->content));
+	if (map_lst == NULL)
+		return (NULL);
+	temp = map_lst;
+	while (lst->next != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		temp->next = ft_lstnew(f(lst->next->content));
+		if (temp->next == NULL)
+		{
+			ft_lstclear(&map_lst, del);
+			break ;
+		}
+		temp = temp->next;
+		lst = lst->next;
 	}
+	return (map_lst);
 }
