@@ -6,7 +6,7 @@
 #    By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 17:02:47 by yolee             #+#    #+#              #
-#    Updated: 2022/01/03 20:26:16 by yolee            ###   ########.fr        #
+#    Updated: 2022/01/04 01:59:48 by yolee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,9 +69,9 @@ else
 	OBJS := $(OBJS_M)
 endif
 
-man : $(NAME)
+all : $(NAME)
 
-bonus : man
+bonus : all
 	$(MAKE) BONUS_FLAG=1
 
 %.o : %.c
@@ -88,5 +88,6 @@ fclean : clean
 	$(RM) $(NAME)
 	
 re : fclean all
+	$(MAKE) BONUS_FLAG=1
 	
 .PHONY : bonus all clean fclean re

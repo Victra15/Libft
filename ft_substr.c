@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 16:31:22 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 20:28:55 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/04 03:11:39 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*s_sub;
 	size_t	s_sub_len;
 
+	if (ft_strlen(s) < start)
+	{
+		s_sub = (char *)malloc(1);
+		if (s_sub == NULL)
+			return (NULL);
+		*s_sub = '\0';
+		return (s_sub);
+	}
 	s_sub_len = ft_strlen(&s[start]);
 	if (s_sub_len > len)
 		s_sub = (char *)malloc(len + 1);

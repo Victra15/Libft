@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:40:16 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 20:28:18 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/04 02:38:05 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,22 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	size_t	n_len;
 	size_t	h_idx;
 	size_t	n_idx;
-	char	skip_char;
 
 	h_len = ft_strlen(haystack);
 	n_len = ft_strlen(needle);
+	if (n_len == 0)
+		return ((char *)(haystack));
 	h_idx = 0;
-	while ((h_idx + n_len) < len
-		&& (h_idx + n_len) < h_len)
+	while ((h_idx + n_len) <= len
+		&& (h_idx + n_len) <= h_len)
 	{
 		n_idx = n_len - 1;
-		while (n_idx > 0
-			&& haystack[h_idx + n_idx] == needle[n_idx])
+		while (n_idx > 0 && haystack[h_idx + n_idx] == needle[n_idx])
 			n_idx--;
 		if (n_idx == 0 && haystack[h_idx + n_idx] == needle[n_idx])
 			return ((char *)(&haystack[h_idx + n_idx]));
 		else
-		{
-			skip_char = haystack[h_idx + n_idx];
-			ft_skip(skip_char, needle, n_idx, &h_idx);
-		}
+			ft_skip(haystack[h_idx + n_idx], needle, n_idx, &h_idx);
 	}
 	return (NULL);
 }
