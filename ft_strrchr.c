@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:40:19 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 18:07:58 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:26:32 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,5 @@ char	*ft_strrchr(const char *s, int c)
 		s--;
 		idx++;
 	}
-	return (0);
+	return (NULL);
 }

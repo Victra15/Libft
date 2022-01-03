@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:40:16 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/28 14:57:29 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:28:18 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			ft_skip(skip_char, needle, n_idx, &h_idx);
 		}
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:21:35 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 00:40:57 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:28:39 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ static char	*ft_strldup(const char *s1, size_t dest_len)
 		s1_cpy = (char *)malloc(dest_len + 1);
 	else
 		s1_cpy = (char *)malloc(s1_len + 1);
-	if (s1_cpy == 0)
-		return (0);
+	if (s1_cpy == NULL)
+		return (NULL);
 	if (s1_len > dest_len)
 		ft_strlcpy(s1_cpy, s1, dest_len + 1);
 	else

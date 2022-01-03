@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:39:45 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/30 01:11:04 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/03 20:24:33 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ char	*ft_strchr(const char *s, int c)
 	if (conv_c == '\0')
 		return ((char *)(s));
 	else
-		return (0);
+		return (NULL);
 }
