@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 00:02:01 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 00:39:31 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 03:22:55 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ void	ft_putnbr_fd(int n, int fd)
 
 	str = ft_itoa(n);
 	ft_putstr_fd(str, fd);
+	free(str);
 }

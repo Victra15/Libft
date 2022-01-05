@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/29 23:10:13 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 03:41:09 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,92 +45,86 @@ int	main(void)
 	
 	if (selector == 0)
 	{
-		ft_isalpha('0');
-		isalpha('0');
+		printf("ft_isalpha: %d\n", ft_isalpha('0'));
+		printf("isalpha: %d\n", isalpha('0'));
 	}
 	else if (selector == 1)
 	{
-		ft_isdigit('0');
-		isdigit('0');
+		printf("ft_isdigit%d\n", ft_isdigit('0'));
+		printf("isdigit%d\n", isdigit('0'));
 	}
 	else if (selector == 2)
 	{
-		ft_isalnum('0');
-		isalnum('0');
+		printf("ft_isalnum: %d\n", ft_isalnum('0'));
+		printf("isalnum: %d\n", isalnum('0'));
 	}
 	else if (selector == 3)
 	{
-		ft_isascii('0');
-		isascii('0');
+		printf("ft_isascii: %d\n", ft_isascii('0'));
+		printf("isascii: %d\n", isascii('0'));
 	}
 	else if (selector == 4)
 	{
-		ft_isprint('0');
-		isprint('0');
+		printf("ft_isprint: %d\n", ft_isprint('0'));
+		printf("isprint: %d\n", isprint('0'));
 	}
 	else if (selector == 5)
 	{
-		printf("%lu\n", strlen("123456789"));
-		printf("%lu\n", ft_strlen("123456789"));
+		printf("ft_strlen: %lu\n", ft_strlen("123456789"));
+		printf("strlen: %lu\n", strlen("123456789"));
 	}
 	else if (selector == 6)
 	{	
 		char	str1[10] = "123456789";
 		char	str2[10] = "123456789";
 
-		memset(str1 + 5, 14567, 4);
-		ft_memset(str2 + 5, 14567, 4);
-		printf("%s\n", str1);
-		printf("%s\n", str2);
+		ft_memset(str1 + 5, 14567, 4);
+		memset(str2 + 5, 14567, 4);
+		printf("ft_memset: %s\n", str1);
+		printf("memset: %s\n", str2);
 	}
 	else if (selector == 7)
 	{	
 		char	str1[10] = "123456789";
 		char	str2[10] = "123456789";
 
-		bzero(str1 + 5, 5);
-		ft_bzero(str2 + 5, 5);
-		printf("%s\n", str1);
-		printf("%s\n", str2);
+		ft_bzero(str1 + 5, 5);
+		bzero(str2 + 5, 5);
+		printf("ft_bzero: %s\n", str1);
+		printf("bzero: %s\n", str2);
 	}
 	else if (selector == 8)
 	{	
 		char	str1[15] = "1234567890";
 		char	str2[15] = "1234567890";
 
-		memcpy(str1 + 2, str1, 10);
-		printf("%s\n", str1);
-		ft_memcpy(str2 + 2, str2, 10);
-		printf("%s\n", str2);
+		ft_memcpy(str1 + 2, str1, 10);
+		memcpy(str2 + 2, str2, 10);
+		printf("ft_memcpy: %s\n", str1);
+		printf("memcpy: %s\n", str2);
 	}
 	else if (selector == 9)
 	{	
 		char	str1[15] = "1234567890";
 		char	str2[15] = "1234567890";
 
-		memmove(str1 + 2, str1, 10);
-		printf("%s\n", str1);
-		ft_memmove(str2 + 2, str2, 10);
-		printf("%s\n", str2);
+		ft_memmove(str1 + 2, str1, 10);
+		memmove(str2 + 2, str2, 10);
+		printf("ft_memmove: %s\n", str1);
+		printf("memmove: %s\n", str2);
 	}
 	else if (selector == 10)
 	{	
-		char str1[20] = "123456";
-		char cpy_str1[20];
-		char str2[20] = "123456";
-		char cpy_str2[20];
-		size_t len1;
-		size_t len2;
+		char	str1[20] = "123456";
+		char	cpy_str1[20];
+		char	str2[20] = "123456";
+		char	cpy_str2[20];
 	
-		len1 = strlcpy(cpy_str1, str1, 15);
-		printf("library\n");
-		printf("%ld\n", len1);
+		printf("ft_strlcpy: %ld ", ft_strlcpy(cpy_str1, str1, 15));
 		printf("%s\n", cpy_str1);
-		len2 = ft_strlcpy(cpy_str2, str2, 15);
-		printf("libft\n");
-		printf("%ld\n", len2);
+		printf("strlcpy: %ld ", strlcpy(cpy_str2, str2, 15));
 		printf("%s\n", cpy_str2);
-		return (0);
+		
 	}
 	else if (selector == 11)
 	{	
@@ -138,68 +132,42 @@ int	main(void)
 		char cat_str1[20] = "123456";
 		char str2[20] = "123456";
 		char cat_str2[20] = "123456";
-		size_t len1;
-		size_t len2;
-	
-		len1 = strlcat(cat_str1, str1, 15);
-		printf("library\n");
-		printf("%ld\n", len1);
+
+		printf("ft_strlcat: %ld\n", ft_strlcat(cat_str1, str1, 15));
 		printf("%s\n", cat_str1);
-		len2 = ft_strlcat(cat_str2, str2, 15);
-		printf("libft\n");
-		printf("%ld\n", len2);
+		printf("strlcat: %ld\n", strlcat(cat_str2, str2, 15));
 		printf("%s\n", cat_str2);
-		return (0);
+		
 	}
 	else if (selector == 12)
 	{	
 		int		ch1;
-		char	conv_ch1;
 		int		ch2;
-		char	conv_ch2;
-		
+	
 		ch1 = 2135;
 		ch2 = 2135;
 	
-		printf("library\n");
-		conv_ch1 = toupper(ch1);
-		printf("%c\n", conv_ch1);
-		printf("libft\n");
-		conv_ch2 = ft_toupper(ch1);
-		printf("%c\n", conv_ch2);
-	
-		return (0);	
+		printf("ft_toupper: %c\n", ft_toupper(ch1));
+		printf("toupper: %c\n", toupper(ch2));
 	}
 	else if (selector == 13)
 	{
 		int		ch1;
-		char	conv_ch1;
 		int		ch2;
-		char	conv_ch2;
 		
 		ch1 = 2135;
 		ch2 = 2135;
 	
-		printf("library\n");
-		conv_ch1 = tolower(ch1);
-		printf("%c\n", conv_ch1);
-		printf("libft\n");
-		conv_ch2 = ft_tolower(ch1);
-		printf("%c\n", conv_ch2);
-	
-		return (0);	
+		printf("ft_tolower: %c\n", ft_tolower(ch1));
+		printf("tolower: %c\n", tolower(ch2));
 	}
 	else if (selector == 14)
 	{	
 		char	str1[10] = "123456789";
-		char	*str2;
-		char	str3[10] = "123456789";
-		char	*str4;
+		char	str2[10] = "123456789";
 	
-		str2 = strchr(str1, '\0');
-		printf("%s-\n", str2);
-		str4 = ft_strchr(str3, '\0');
-		printf("%s-\n", str4);
+		printf("ft_strchr: %s-\n", ft_strchr(str1, '\0'));
+		printf("strchr: %s-\n", strchr(str2, '\0'));
 	}
 	else if (selector == 15)
 	{	
@@ -216,7 +184,7 @@ int	main(void)
 		printf("libft\n");
 		target2 = ft_strrchr(str2, chr2);
 		printf("%s\n", target2);
-		return (0);	
+			
 	}
 	else if (selector == 16)
 	{
@@ -251,7 +219,7 @@ int	main(void)
 		printf("%d\n", memcmp(str1, str2, 6));
 		printf("libft\n");
 		printf("%d\n", ft_memcmp(str1, str2, 6));
-		return (0);
+		
 	}
 	else if (selector == 19)
 	{	
@@ -270,7 +238,7 @@ int	main(void)
 		printf("libft\n");
 		printf("%s\n", target2);
 		printf("%ld\n", strlen(str4));
-		return (0);
+		
 	}
 	else if (selector == 20)
 	{	
@@ -292,7 +260,7 @@ int	main(void)
 		mem2[0] = 'a';
 		mem2[1] = 'b';
 		printf("%s\n", mem2);
-		return (0);
+		
 	}
 	else if (selector == 22)
 	{	
@@ -307,7 +275,7 @@ int	main(void)
 		printf("libft\n");
 		dup_str2 = ft_strdup(str2);
 		printf("%s\n", dup_str2);
-		return (0);
+		
 	}
 	else if (selector == 23)
 	{	
@@ -317,7 +285,7 @@ int	main(void)
 		printf("libft\n");
 		sub_str1 = ft_substr(str1, 2, 3);
 		printf("%s\n", sub_str1);
-		return (0);
+		
 	}
 	else if (selector == 24)
 	{	
@@ -328,7 +296,7 @@ int	main(void)
 		printf("libft\n");
 		join_str = ft_strjoin(str1, str2);
 		printf("%s\n", join_str);
-		return (0);
+		
 	}
 	else if (selector == 25)
 	{	
@@ -339,7 +307,7 @@ int	main(void)
 		printf("libft\n");
 		trim_str = ft_strtrim(str1, str2);
 		printf("%s\n", trim_str);
-		return (0);
+		
 	}
 	else if (selector == 26)
 	{	
@@ -357,7 +325,7 @@ int	main(void)
 			printf("%s\n", split_str[split_loop]);
 			split_loop++;
 		}
-		return (0);
+		
 	}
 	else if (selector == 27)
 	{	
@@ -368,7 +336,7 @@ int	main(void)
 		printf("libft\n");
 		str = ft_itoa(n);
 		printf("%s\n", str);
-		return (0);
+		
 	}
 	else if (selector == 28)
 	{	
@@ -378,7 +346,7 @@ int	main(void)
 		printf("libft\n");
 		str2 = ft_strmapi(str1, test_tolower);
 		printf("%s\n", str2);
-		return (0);
+		
 	}
 	else if (selector == 29)
 	{	

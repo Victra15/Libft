@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 23:10:44 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 00:40:35 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 03:23:58 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		loop++;
 		s++;
 	}
-	f(loop, s);
 }
