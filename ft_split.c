@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 01:50:55 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 20:24:44 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 03:19:29 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static size_t	ft_split_cnt(char const *s, char c)
 	while (word_end != NULL)
 	{
 		word_end = ft_strchr(word_start, c);
+		if (word_end != NULL && (*word_end) == '\0')
+			word_end = NULL;
 		if (word_start != word_end && (*word_start) != '\0')
 			split_cnt++;
 		if (word_end != NULL)
@@ -57,18 +59,20 @@ static char	**ft_do_split(char *s_cpy, char c, char **split_strs)
 	word_start = s_cpy;
 	word_end = s_cpy;
 	split_cnt = 0;
-	while (word_end != 0)
+	while (word_end != NULL)
 	{
 		word_end = ft_strchr(word_start, c);
+		if (word_end != NULL && (*word_end) == '\0')
+			word_end = NULL;
 		if (word_start != word_end && (*word_start) != '\0')
 		{
-			if (word_end != 0)
+			if (word_end != NULL)
 				(*word_end) = '\0';
 			if (!ft_safe_strdup(split_strs, split_cnt, word_start))
 				return (NULL);
 			split_cnt++;
 		}
-		if (word_end != 0)
+		if (word_end != NULL)
 			word_start = word_end + 1;
 	}
 	split_strs[split_cnt] = 0;
@@ -91,5 +95,6 @@ char	**ft_split(char const *s, char c)
 	split_strs = ft_do_split(s_cpy, c, split_strs);
 	if (split_strs == NULL)
 		return (NULL);
+	free(s_cpy);
 	return (split_strs);
 }
