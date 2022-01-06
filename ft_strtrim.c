@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 17:21:35 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/04 03:27:40 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/07 04:50:41 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	left;
 	size_t	right;
 
+	if (s1 == NULL)
+		return (0);
 	left = 0;
 	right = ft_strlen(s1);
 	while (left != right && ft_strchr(set, s1[left]))

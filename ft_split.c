@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/26 01:50:55 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/06 03:19:29 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/07 04:49:00 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,8 @@ char	**ft_split(char const *s, char c)
 	char	*s_cpy;
 	size_t	split_cnt;
 
+	if (s == NULL)
+		return (NULL);
 	split_cnt = ft_split_cnt(s, c);
 	s_cpy = ft_strdup(s);
 	if (s_cpy == NULL)

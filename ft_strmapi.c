@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 22:09:26 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 20:27:49 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/07 04:48:36 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	loop;
 	char			*s_map;
 
+	if (s == NULL)
+		return (NULL);
 	s_len = ft_strlen(s);
 	s_map = (char *)malloc(s_len + 1);
 	if (s_map == NULL)

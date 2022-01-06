@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 01:20:34 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 11:23:32 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/07 04:43:28 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*temp;
 	t_list	*map_lst;
 
+	if (lst == NULL)
+		return (NULL);
 	map_lst = ft_lstnew(f(lst->content));
 	if (map_lst == NULL)
 		return (NULL);
