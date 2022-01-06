@@ -6,12 +6,13 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:59:49 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/06 03:41:09 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 22:10:45 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include	"libft.h"
 #include	<stdio.h>
+#include	<string.h>
 #include	<stdlib.h>
 #include	<ctype.h>
 
@@ -29,7 +30,7 @@ int	main(void)
 {
 	int	selector;
 
-	selector = 0;
+	selector = 16;
 
 	// ft_isalpha		0	// ft_isdigit		1	// ft_isalnum		2	// ft_isascii		3	
 	// ft_isprint		4	// ft_strlen		5	// ft_memset		6	// ft_bzero			7
@@ -70,8 +71,8 @@ int	main(void)
 	}
 	else if (selector == 5)
 	{
-		printf("ft_strlen: %lu\n", ft_strlen("123456789"));
-		printf("strlen: %lu\n", strlen("123456789"));
+		printf("ft_strlen: %ld\n", ft_strlen("123456789"));
+		printf("strlen: %ld\n", strlen("123456789"));
 	}
 	else if (selector == 6)
 	{	
@@ -173,94 +174,79 @@ int	main(void)
 	{	
 		char	str1[10] = "123456383";
 		char	chr1 = '1';
-		char	*target1;
 		char	str2[10] = "123456383";
 		char	chr2 = '1';
-		char	*target2;
-	
-		target1 = strrchr(str1, chr1);
-		printf("library\n");
-		printf("%s\n", target1);
-		printf("libft\n");
-		target2 = ft_strrchr(str2, chr2);
-		printf("%s\n", target2);
-			
+
+		printf("ft_strrchr: %s\n", ft_strrchr(str2, chr2));			
+		printf("strrchr: %s\n", strrchr(str1, chr1));
 	}
 	else if (selector == 16)
 	{
-		char	str1[10] = "123456789";
-		char	*str2;
-		char	str3[10] = "123456789";
-		char	*str4;
-	
-		str2 = memchr(str1, '5', 10);
-		printf("%s", str2);
-		str4 = ft_memchr(str3, '5', 10);
-		printf("%s", str4);
+		char	str1[10] = "test\200";
+		char	str2[10] = "test\0";
+
+		printf("ft_strncmp: %d\n", ft_strncmp(str1, str2, 6));
+		printf("strncmp: %d\n", strncmp(str1, str2, 6));
 	}
 	else if (selector == 17)
 	{	
-		char	str1[15] = "1234567890";
-		char	str2[15] = "1234567891";
-		int		result1;
-		int		result2;
-	
-		result1 = memcmp(str1, str2, 10);
-		printf("%d ", result1);
-		result2 = ft_memcmp(str1, str2, 10);
-		printf("%d", result2);
+		// char	*str1 = "123456789";
+		// char	chr1 = '3';
+		// char	*sub_str1;
+		// char	*str2 = "123456789";
+		// char	chr2 = '3';
+		// char	*sub_str2;
+
+		// sub_str1 = (char *)ft_memchr(str1, chr1, 5);
+		// printf("ft_memchr: %s\n", sub_str1);
+		// sub_str2 = (char *)memchr(str2, chr2, 5);
+		// printf("memchr: %s\n", sub_str1);
+		int tab1[7] = {-49, 49, 1, -1, 0, -2, 2};
+		int tab2[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+		printf("%s\n", (char *)ft_memchr(tab1, -1, 14));
+		printf("%s\n", (char *)memchr(tab2, -1, 14));
 	}
 	else if (selector == 18)
 	{	
-		char str1[20] = "123456";
-		char str2[20] = "12345a";
-
-		printf("library\n");
-		printf("%d\n", memcmp(str1, str2, 6));
-		printf("libft\n");
-		printf("%d\n", ft_memcmp(str1, str2, 6));
-		
+		char	str1[15] = "1234567890";
+		char	cmp_str1[15] = "1234567891";
+		char	str2[15] = "1234567890";
+		char	cmp_str2[15] = "1234567891";
+	
+		printf("ft_memcmp: %d\n", ft_memcmp(str1, cmp_str1, 10));
+		printf("memcmp: %d\n", memcmp(str2, cmp_str2, 10));
 	}
 	else if (selector == 19)
 	{	
 		char	str1[10] = "123456789";
 		char	*str2 = "57";
-		char	*target1;
 		char	str3[10] = "123456789";
 		char	*str4 = "57";
-		char	*target2;
 	
-		target1 = strnstr(str1, str2, 9);
-		printf("library\n");
-		printf("%s\n", target1);
-		printf("%ld\n", strlen(str2));
-		target2 = ft_strnstr(str3, str4, 9);
-		printf("libft\n");
-		printf("%s\n", target2);
+		printf("ft_strnstr: %s\n", ft_strnstr(str3, str4, 9));
 		printf("%ld\n", strlen(str4));
-		
+		printf("strnstr: %s\n", strnstr(str1, str2, 9));
+		printf("%ld\n", strlen(str2));
 	}
 	else if (selector == 20)
 	{	
-		printf("%d\n", atoi("00000000000922337203775808000000"));
-		printf("%d", ft_atoi("00000000000922337203775808000000"));
+		printf("ft_atoi: %d\n", ft_atoi("00000000000922337203775808000000"));
+		printf("atoi: %d\n", atoi("00000000000922337203775808000000"));
 	}
 	else if (selector == 21)
 	{	
 		char	*mem1;
 		char	*mem2;
 	
-		printf("library\n");
 		mem1 = calloc(5, sizeof(int));
 		mem1[0] = 'a';
 		mem1[1] = 'b';
-		printf("%s\n", mem1);
-		printf("libft\n");
+		printf("calloc: %s\n", mem1);
 		mem2 = ft_calloc(5, sizeof(int));
 		mem2[0] = 'a';
 		mem2[1] = 'b';
-		printf("%s\n", mem2);
-		
+		printf("ft_calloc: %s\n", mem2);
 	}
 	else if (selector == 22)
 	{	
@@ -269,23 +255,21 @@ int	main(void)
 		char	str2[20] = "1234567";
 		char	*dup_str2;
 	
-		printf("library\n");
 		dup_str1 = strdup(str1);
-		printf("%s\n", dup_str1);
-		printf("libft\n");
+		printf("strdup: %s\n", dup_str1);
 		dup_str2 = ft_strdup(str2);
-		printf("%s\n", dup_str2);
-		
+		printf("ft_strdup: %s\n", dup_str2);
+		free(dup_str1);
+		free(dup_str2);
 	}
 	else if (selector == 23)
 	{	
 		char	str1[20] = "1234567";
 		char	*sub_str1;
 	
-		printf("libft\n");
 		sub_str1 = ft_substr(str1, 2, 3);
-		printf("%s\n", sub_str1);
-		
+		printf("ft_substr: %s\n", sub_str1);
+		free(sub_str1);
 	}
 	else if (selector == 24)
 	{	
@@ -293,10 +277,9 @@ int	main(void)
 		char	str2[20] = "1234567";
 		char	*join_str;
 
-		printf("libft\n");
 		join_str = ft_strjoin(str1, str2);
-		printf("%s\n", join_str);
-		
+		printf("ft_strjoin: %s\n", join_str);
+		free(join_str);
 	}
 	else if (selector == 25)
 	{	
@@ -304,10 +287,9 @@ int	main(void)
 		char	str2[20] = "167a";
 		char	*trim_str;
 	
-		printf("libft\n");
 		trim_str = ft_strtrim(str1, str2);
-		printf("%s\n", trim_str);
-		
+		printf("ft_strtrim: %s\n", trim_str);
+		free(trim_str);
 	}
 	else if (selector == 26)
 	{	
@@ -317,15 +299,21 @@ int	main(void)
 		size_t	split_loop;
 	
 		chr = 'a';
-		printf("libft\n");
 		split_str = ft_split(str, chr);
 		split_loop = 0;
 		while (split_str[split_loop] != 0)
 		{
-			printf("%s\n", split_str[split_loop]);
+			printf("split_str[%ld] %s\n", split_loop, split_str[split_loop]);
 			split_loop++;
 		}
-		
+		split_loop = 0;
+		while (split_str[split_loop] != NULL)
+		{
+			free(split_str[split_loop]);
+			split_loop++;
+		}
+		free(split_str[split_loop]);
+		free(split_str);
 	}
 	else if (selector == 27)
 	{	
@@ -333,20 +321,17 @@ int	main(void)
 		int		n;
 	
 		n = -2147483648;
-		printf("libft\n");
 		str = ft_itoa(n);
-		printf("%s\n", str);
-		
+		printf("ft_itoa: %s\n", str);
+		free(str);
 	}
 	else if (selector == 28)
 	{	
 		char	*str1 = "assklwqklwklmcALWm";
 		char	*str2;
 	
-		printf("libft\n");
 		str2 = ft_strmapi(str1, test_tolower);
-		printf("%s\n", str2);
-		
+		printf("ft_strmapi: %s\n", str2);
 	}
 	else if (selector == 29)
 	{	

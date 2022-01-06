@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:39:18 by yolee             #+#    #+#             */
-/*   Updated: 2022/01/03 20:18:10 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/06 21:44:44 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	conv_c;
-	const char		*conv_s;
+	unsigned char			conv_c;
+	const unsigned char		*conv_s;
 
 	conv_c = c;
 	conv_s = s;
