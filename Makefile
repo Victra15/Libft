@@ -6,17 +6,17 @@
 #    By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 17:02:47 by yolee             #+#    #+#              #
-#    Updated: 2022/01/04 01:59:48 by yolee            ###   ########.fr        #
+#    Updated: 2022/01/07 02:23:13 by yolee            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC := gcc
-CFLAGS := -Wall -Wextra -Werror
-AR := ar
-ARFLAGS := -rcs
-NAME := libft.a
-SRCDIR := ./
-SRCS_M := ft_isalpha.c \
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar
+ARFLAGS = -rcs
+NAME = libft.a
+SRCDIR = ./
+SRCS = ft_isalpha.c \
 	ft_isdigit.c \
 	ft_isalnum.c \
 	ft_isascii.c \
@@ -51,7 +51,7 @@ SRCS_M := ft_isalpha.c \
 	ft_putendl_fd.c \
 	ft_putnbr_fd.c \
 
-SRCS_B := ft_lstnew.c \
+SRCS_B = ft_lstnew.c \
 	ft_lstadd_front.c \
 	ft_lstsize.c \
 	ft_lstlast.c \
@@ -61,33 +61,30 @@ SRCS_B := ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c \
 
-OBJS_M := $(SRCS_M:.c=.o)
-OBJS_B := $(SRCS_B:.c=.o)
+OBJS = $(SRCS:.c=.o)
+OBJS_B = $(SRCS_B:.c=.o)
 ifdef BONUS_FLAG
-	OBJS := $(OBJS_B)
-else
-	OBJS := $(OBJS_M)
+	OBJS += $(OBJS_B)
 endif
 
 all : $(NAME)
 
-bonus : all
+bonus :
 	$(MAKE) BONUS_FLAG=1
 
 %.o : %.c
 	$(CC) $(CFLAGS) -c $? -o $@
 
 $(NAME) : $(OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $?
 
 clean : 
-	$(RM) $(OBJS_M)
+	$(RM) $(OBJS)
 	$(RM) $(OBJS_B)
 
 fclean : clean
 	$(RM) $(NAME)
 	
-re : fclean all
-	$(MAKE) BONUS_FLAG=1
+re : fclean bonus
 	
 .PHONY : bonus all clean fclean re
