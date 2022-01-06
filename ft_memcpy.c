@@ -6,7 +6,7 @@
 /*   By: yolee <yolee@student.42seoul.kr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 17:39:30 by yolee             #+#    #+#             */
-/*   Updated: 2021/12/23 17:31:44 by yolee            ###   ########.fr       */
+/*   Updated: 2022/01/07 03:45:31 by yolee            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char		*conv_dst;
 	const unsigned char	*conv_src;
 
+	if (dst == NULL && src == NULL)
+		return (dst);
 	conv_dst = dst;
 	conv_src = src;
 	while (n--)
